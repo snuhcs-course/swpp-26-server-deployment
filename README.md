@@ -1,23 +1,23 @@
 # SWPP 2026 Django API deployment exercise
 
-This starter exposes one JSON endpoint: `/api/health`. The commands match the eight exercise slides. Use your assigned server B team container and keep the same SSH shell open through the exercise. Replace `N` with your team number. Clone the repository on your laptop, where your GitHub access is configured, then copy the checkout to the shared team server.
+This starter exposes one JSON endpoint: `/api/health`. The commands match the eight exercise slides. Use your assigned server B team container and keep the same SSH shell open through the exercise. Replace `N` with your team number.
 
 The nginx commands assume it is running with `/etc/nginx/sites-enabled/default` as its only active site. If another application uses port 80, follow your team's migration guide instead.
 
-## 1. Clone and copy
+## 1. Clone the starter
 
-On your laptop:
+On your laptop, connect to your team container:
 
 ```bash
-git clone https://github.com/snuhcs-course/swpp-26-server-deployment.git django-deployment-student
-scp -r django-deployment-student swpp-b:~/
 ssh swpp-b
 ```
 
-In the team container:
+In the team container, clone the public repository:
 
 ```bash
-cd ~/django-deployment-student
+cd ~
+git clone https://github.com/snuhcs-course/swpp-26-server-deployment.git django-deployment-student
+cd django-deployment-student
 ls README.md manage.py deploy/
 ```
 
