@@ -1,0 +1,16 @@
+[Unit]
+Description=SWPP 2026 Django API Gunicorn instance %i
+After=network.target
+
+[Service]
+User=CHANGE_ME_LINUX_USER
+Group=CHANGE_ME_LINUX_GROUP
+WorkingDirectory=CHANGE_ME_ABSOLUTE_APP_DIR
+EnvironmentFile=CHANGE_ME_ABSOLUTE_ENV_FILE
+Environment=CLASS26_LAB_WORKER=worker-%i
+ExecStart=CHANGE_ME_ABSOLUTE_APP_DIR/.venv/bin/gunicorn --workers 2 --bind 127.0.0.1:800%i labsite.wsgi:application
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
